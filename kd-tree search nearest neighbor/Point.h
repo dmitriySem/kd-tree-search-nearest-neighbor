@@ -11,7 +11,7 @@ public:
 	~Point();
 	double getCoord(int i);
 	int getSize();
-	//double distTo(Point* pt);
+	double distTo(Point pt);
 	bool equals(Point pt);
 
 

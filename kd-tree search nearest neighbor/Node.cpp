@@ -25,6 +25,16 @@ Point Node::getPoint()
 	return m_point;
 }
 
+Node* Node::getLeft()
+{
+	return left;
+}
+
+Node* Node::getRight()
+{
+	return right;
+}
+
 Node::Orientation Node::getOrient()
 {
 	return this->orient;
@@ -42,6 +52,26 @@ Node::Orientation Node::otherOrint(Orientation o)
 		std::cout << "3d isn't implemented" << std::endl;
 	}
 
+}
+
+void Node::setLeft(Point pt)
+{
+	this->left = new Node(pt, otherOrint(this->getOrient()));
+}
+
+void Node::setLeft(Node* n)
+{
+	this->left = n;
+}
+
+void Node::setRight(Point pt)
+{
+	this->right = new Node(pt, otherOrint(this->getOrient()));
+}
+
+void Node::setRight(Node* n)
+{
+	this->right = n;
 }
 
 int Node::compareTo(Point pt)
@@ -65,4 +95,10 @@ int Node::compareTo(Point pt)
 	}
 	
 	return 0;
+}
+
+double Node::perpendicularDistance(Point pt)
+{
+	if (orient == Horisontal) return std::abs(pt.getCoord(1) - this->m_point.getCoord(1));
+	else return std::abs(pt.getCoord(0) - this->m_point.getCoord(0));
 }

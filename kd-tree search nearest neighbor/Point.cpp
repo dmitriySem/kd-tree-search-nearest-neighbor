@@ -46,18 +46,18 @@ int Point::getSize()
 {
 	return m_coord.size();
 }
-/*
-double Point::distTo(Point* pt)
+
+double Point::distTo(Point pt)
 {
-	if (pt->getSize() == 2)
-		return std::sqrt(std::pow(this->getCoord(0) - pt->getCoord(0), 2)
-					   + std::pow(this->getCoord(1) - pt->getCoord(1), 2));
+	if (pt.getSize() == 2)
+		return std::sqrt(std::pow(this->getCoord(0) - pt.getCoord(0), 2)
+					   + std::pow(this->getCoord(1) - pt.getCoord(1), 2));
 		
-return std::sqrt(std::pow(this->getCoord(0) - pt->getCoord(0), 2)
-			   + std::pow(this->getCoord(1) - pt->getCoord(1), 2)
-			   + std::pow(this->getCoord(2) - pt->getCoord(2), 2));
+return std::sqrt(std::pow(this->getCoord(0) - pt.getCoord(0), 2)
+			   + std::pow(this->getCoord(1) - pt.getCoord(1), 2)
+			   + std::pow(this->getCoord(2) - pt.getCoord(2), 2));
 }
-*/
+
 bool Point::equals(Point pt)
 {
 	if (this->getSize() == 2)

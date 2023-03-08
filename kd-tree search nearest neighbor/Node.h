@@ -1,5 +1,6 @@
 #pragma once
 #include "Point.h"
+#include <math.h>
 
 class Node
 {
@@ -23,11 +24,12 @@ public:
 	Orientation otherOrint(Orientation o);
 
 	void setLeft(Point pt);
-	void setLeft(Node n);
+	void setLeft(Node* n);
 	void setRight(Point pt);
-	void setRight(Node n);
+	void setRight(Node* n);
 
 	int compareTo(Point pt);
+	double perpendicularDistance(Point pt);
 
 
 private:
