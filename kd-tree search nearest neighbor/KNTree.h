@@ -1,6 +1,7 @@
 #pragma once
 #include "Node.h"
 #include "Point.h"
+#include <list>
 
 
 
@@ -25,8 +26,12 @@ public:
 
 	Node* closerNode(Point pt, Node* n1, Node* n2);
 
-	//void print_tree(Point pt); //печатает дерево от элемента вниз
-	//void print_tree(Node n); //печатает дерево от элемента вниз
+	//std::list<Point>  inOrder();
+	//std::list<Point>  inOrder(Node* n);
+
+	void PrintInOrder();
+	void PrintInOrder(Node* n);
+
 
 private:
 	Node* root;

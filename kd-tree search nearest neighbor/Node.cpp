@@ -15,7 +15,7 @@ Node::Node(Point pt, Orientation orient)
 
 Node::~Node()
 {
-	std::cout << "Node is removed" << std::endl;
+	//std::cout << "Node is removed" << std::endl;
 	
 	delete left, right;
 }

@@ -4,7 +4,7 @@
 
 Point::Point(int id, double x, double y)
 {
-	std::cout << "2d Point is created id: " << id << std::endl;
+	//std::cout << "2d Point is created id: " << id << std::endl;
 	this->id = id;
 	this->m_coord.push_back(x);
 	this->m_coord.push_back(y);
@@ -28,7 +28,7 @@ Point::Point()
 Point::~Point()
 {
 	
-	std::cout << "Remove point " <<  id << std::endl;
+	//std::cout << "Remove point " <<  id << std::endl;
 	m_coord.clear();
 }
 
@@ -36,10 +36,15 @@ double Point::getCoord(int i)
 {
 	if (i >= m_coord.size())
 	{
-		std::cout << "Index of vector is out size vector of point" << std::endl;
+		//std::cout << "Index of vector is out size vector of point" << std::endl;
 		return NULL;
 	}
 	return this->m_coord[i];
+}
+
+int Point::getId()
+{
+	return this->id;
 }
 
 int Point::getSize()

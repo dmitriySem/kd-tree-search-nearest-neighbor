@@ -1,4 +1,5 @@
 #include "KNTree.h"
+#include <iostream>
 
 KNTree::KNTree()
 {
@@ -95,6 +96,31 @@ Node* KNTree::closerNode(Point pt, Node* n1, Node* n2)
 
 	return pt.distTo(n1->getPoint()) < pt.distTo(n2->getPoint()) ? n1 : n2;
 }
+void KNTree::PrintInOrder()
+{
+	PrintInOrder(this->root);
+}
+void KNTree::PrintInOrder(Node* n)
+{
+	if (n->getLeft() != nullptr) PrintInOrder(n->getLeft());	
+	std::cout << "id: " << n->getPoint().getId() << " x: " << n->getPoint().getCoord(0) << " y: " << n->getPoint().getCoord(1) << " dist to point(1, 45): " << n->getPoint().distTo(Point(101, 1, 45)) << std::endl;
+	
+	if (n->getRight() != nullptr) PrintInOrder(n->getRight());
+	std::cout << "id: " << n->getPoint().getId() << " x: " << n->getPoint().getCoord(0) << " y: " << n->getPoint().getCoord(1) << " dist to point(1, 45): " << n->getPoint().distTo(Point(101, 1, 45)) << std::endl;
+}
+
+//std::list<Point> KNTree::inOrder()
+//{
+//	return inOrder(root);
+//}
+//
+//std::list<Point> KNTree::inOrder(Node* n)
+//{
+//	std::list<Point> list;
+//	if (n->getRight() != nullptr) list.emplace_back(n->getRight());
+//	
+//	return std::list<Point>();
+//}
 
 
 

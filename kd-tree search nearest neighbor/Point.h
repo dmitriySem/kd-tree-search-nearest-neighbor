@@ -10,6 +10,7 @@ public:
 	Point(int id, double x, double y, double z);
 	~Point();
 	double getCoord(int i);
+	int getId();
 	int getSize();
 	double distTo(Point pt);
 	bool equals(Point pt);
