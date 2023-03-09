@@ -34,6 +34,7 @@ public:
 
 
 private:
+
 	Node* root;
 
 };
